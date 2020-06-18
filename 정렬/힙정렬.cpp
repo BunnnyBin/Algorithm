@@ -23,11 +23,11 @@ void heapify(int i) {
 		heap[c] = temp;
 	}
 
-	if (c <= number / 2) heapify(c); //Q(1/2logN)
+	if (c <= number / 2) heapify(c); //서로 바꿔준 자식에 대해 heapify
 }
 
 //모든 정점에 대해서 힙 생성 알고리즘 적용 - Q(N)
-//최상위 노드를 최하위 노드와 바꾼다(정렬)
+
 int main(void) {
 	cin >> number;
 	for (int i = 1; i <= number; i++) {
@@ -48,7 +48,7 @@ int main(void) {
 		int temp = heap[1];
 		heap[1] = heap[i];
 		heap[i] = temp;
-		//위에서부터 heapify
+		//바꾼 1부터 heapify - 재귀함수대신에 do while
 		int root = 1;
 		int c;
 		do {
