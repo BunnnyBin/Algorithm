@@ -5,7 +5,7 @@
 using namespace std;
 
 int arr[100001];
-vector <char> vec;
+vector <char> vec;  //vector말고 string으로도 가능 
 stack<int> stk;
 
 int main(void) {
@@ -20,8 +20,9 @@ int main(void) {
 		cin >> num;
 
 		arr[i] = num;
-	}
-
+	} 
+	
+	//다른 방법 : arr[i] > x 인 경우(무조건 push)와 그 반대의 경우(무조건 pop)를 나누어 생각하기 
 	int i = 0;
 	for (int x = 1; x <= n; x++) {
 		stk.push(x);

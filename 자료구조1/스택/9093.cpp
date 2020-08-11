@@ -31,6 +31,7 @@ int main(void) {
 				stk.push(word[i]);
 			}
 		}
+		//word += '\n', if(word[i] == ' ' || word[i] == '\n')으로 풀면 아래는 필요x 
 		while (!stk.empty()) {
 			cout << stk.top();
 			stk.pop();

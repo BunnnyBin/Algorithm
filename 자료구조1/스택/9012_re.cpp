@@ -5,6 +5,7 @@
 using namespace std;
 
 void bracket_check(string c) {
+	//stack 크기만으로도 풀 수 있다!!! 
 	stack<char> stk;
 
 	for (int i = 0; i < c.length(); i++) {
