@@ -1,6 +1,6 @@
 #include <iostream>
 #include <queue>
-
+//굳이 큐로 풀 필요없는 문제 
 using namespace std;
 
 queue <int> q;
