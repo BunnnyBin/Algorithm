@@ -1,0 +1,38 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <stdlib.h>
+#include <time.h>
+#include <queue>
+
+using namespace std;
+
+queue<int> Q[10]; //1~9
+
+void G_RadixSort(int arr[], int size) {
+	int MaxRadix = 1;
+	int i, j;
+	//compute max radix
+	while (true) {
+		if (MaxRadix >= size) break;
+		MaxRadix = MaxRadix * 10;
+	}
+
+	for (i = 1; i < MaxRadix; i = i * 10) {
+		for (j = 0; j < size; j++) {
+			int t;
+			if (arr[j] < i) t = 0;
+			else
+				t = (arr[j] / i) % 10;
+			Q[t].push(arr[j]);
+		}
+		//pop process
+		int n = 0;
+		for (j = 0; j < 10; j++) {
+			while (Q[j].empty() == 0) {
+				arr[n] = Q[j].front();
+				Q[j].pop();
+				n++;
+			}
+		}
+	}
+}
